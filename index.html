@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DDI App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              app: {
+                bg: '#121212',
+                card: '#1E1E1E',
+                nav: '#181818',
+                accent: '#22C55E', // Green for active nav/logo
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'], // Ideally would use a Bengali font, but system sans works
+            }
+          }
+        }
+      }
+    </script>
+    <script>
+      window.MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        chtml: {
+          scale: 1,
+          displayAlign: 'center',
+          displayIndent: '0'
+        },
+        options: {
+          enableMenu: false // Optional: disable right-click menu on math
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+    </script>
+    <style>
+      body {
+        background-color: #000;
+        color: white;
+      }
+      /* Hide scrollbar for clean mobile look */
+      ::-webkit-scrollbar {
+        width: 0px;
+        background: transparent;
+      }
+      /* MathJax adjustment: INHERIT color so it works on both dark (app) and light (user content) backgrounds */
+      mjx-container {
+        color: inherit !important;
+        font-size: 110% !important;
+      }
+      /* Ensure CHTML output respects inherited color */
+      .mjx-chtml {
+        color: inherit !important;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "firebase/app": "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js",
+    "firebase/auth": "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js",
+    "firebase/firestore": "https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore.js",
+    "firebase/database": "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.6.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
